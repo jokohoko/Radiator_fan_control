@@ -23,10 +23,10 @@ void loop() {
   while (!sensor.isConversionComplete());  // (BLOCKING!!) wait until sensor is ready
   Serial.println(sensor.getTempC());
   if (sensor.getTempC() > 25) {
-    analogWrite(output, 200);
+    digitalWrite(output, HIGH);
     digitalWrite(13, HIGH);
   } else {
-    analogWrite(output, 0);
+    digitalWrite(output, LOW);
     digitalWrite(13, LOW);
   }
   delay(5000);
